@@ -14,9 +14,6 @@ test('test', async ({ page }) => {
   await page.getByRole('link', { name: 'My Info' }).click();
   await page.waitForTimeout(1000);
   await page.getByPlaceholder('First Name').click();
-  await page.getByPlaceholder('First Name').fill('');
-  await page.getByPlaceholder('First Name').press('CapsLock');
-  await page.getByPlaceholder('First Name').fill('D');
   await page.getByPlaceholder('First Name').press('CapsLock');
   await page.getByPlaceholder('First Name').fill('Dixon');
   await page.getByPlaceholder('Middle Name').click();
@@ -43,9 +40,11 @@ test('test', async ({ page }) => {
   await page.locator('//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[4]/button').click();
   await page.waitForTimeout(3000);
 
-  await page.locator('form').filter({ hasText: 'Blood TypeB+Test_Field Save' }).getByRole('textbox').clear();
+
+
+  await page.locator('//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[2]/div/form/div[1]/div/div[2]/div/div[2]/input').clear();
+  await page.locator('//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[2]/div/form/div[1]/div/div[2]/div/div[2]/input').fill('04144875454');
   await page.waitForTimeout(1000);
-  await page.locator('form').filter({ hasText: 'Blood TypeB+Test_Field Save' }).getByRole('textbox').fill('04144875454');
   await page.waitForTimeout(1000);
   await page.locator('//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[4]/button').click();
   await page.waitForTimeout(3000);

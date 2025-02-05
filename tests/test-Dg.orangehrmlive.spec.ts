@@ -11,14 +11,10 @@ test('test', async ({ page }) => {
   await page.getByRole('link', { name: 'My Info' }).click();
   await page.waitForTimeout(1000);
   await page.getByPlaceholder('First Name').click();
-  await page.getByPlaceholder('First Name').press('CapsLock');
   await page.getByPlaceholder('First Name').fill('Dixon');
   await page.getByPlaceholder('Middle Name').click();
-  await page.getByPlaceholder('Middle Name').press('CapsLock');
   await page.getByPlaceholder('Middle Name').fill('Qa');
   await page.getByPlaceholder('Last Name').click();
-  await page.getByPlaceholder('Last Name').fill('');
-  await page.getByPlaceholder('Last Name').press('CapsLock');
   await page.getByPlaceholder('Last Name').fill('Prueba');
   await page.locator('div').filter({ hasText: /^Employee IdOther Id$/ }).getByRole('textbox').first().click();
   await page.locator('div').filter({ hasText: /^Employee IdOther Id$/ }).getByRole('textbox').first().fill('8484585');
